@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>You are suppossed to set questions for the quiz</p>
+    <label>Question no.</label><input type="text" id="num"/><br><br>
+    <label>Question</label><input type="text" id="question"/><br><br>
+    <label>option1</label><input type="text" id="option1"/><br><br>
+    <label>option2</label><input type="text" id="option2"/><br><br>
+    <label>option3</label><input type="text" id="option3"/><br><br>
+    <label>option4</label><input type="text" id="option4"/><br><br>
+    <label>answer</label><input type="text" id="answer"/><br><br>
+    <button type="button" id="btn">Submit</button>
+  </body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn").click(function(){
+        var data = {
+        	num      : $("#num").val(),
+        	question : $("#question").val(),
+        	option1  : $("#option1").val(),
+        	option2  : $("#option2").val(),
+            option3  : $("#option3").val(),
+            option4  : $("#option4").val(),
+            answer   : $("#answer").val()
+        };
+        //console.log(data);
+        $.ajax({
+        	type    : "POST",
+        	url     : "/admin_users",
+        	data    : data,
+        	success : function(result){
+        		alert(result);
+
+        	}
+        });
+    });
+});
+</script>

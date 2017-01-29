@@ -1,0 +1,148 @@
+/* 1 */
+{
+    "_id" : ObjectId("588af1cb24b8951a095637ef"),
+    "index" : 1,
+    "quest" : "Q. Which of the following nation topped the list of Logistic performance Index 2016 ?",
+    "answer" : "Germany",
+    "options" : {
+        "option1" : "Germany",
+        "option2" : "France",
+        "option3" : "UK",
+        "option4" : "India"
+    },
+    "__v" : 0
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("588afe0ac7ee3d1b1f2930e8"),
+    "answer" : "Bharti"
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("588afeb67604901c3a201bd2"),
+    "index" : 3,
+    "quest" : "Q. India's rank in Global Competitiveness Index, 2016-17 is -",
+    "answer" : "39th",
+    "options" : {
+        "option1" : "39th",
+        "option2" : "40th",
+        "option3" : "49th",
+        "option4" : "59th"
+    },
+    "__v" : 0
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("588afef8fff0311c4ed26005"),
+    "answer" : "Bharti"
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("588aff76f63e901c601f3a90"),
+    "answer" : "Bharti"
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("588c6fa9a473a61668cdd30c"),
+    "index" : 2,
+    "quest" : "Which country has successfully launched its first-ever military communications satellite Kirameki -2 into orbit? ",
+    "answer" : "Japan",
+    "options" : {
+        "option1" : "Japan",
+        "option2" : "India",
+        "option3" : "Brazil",
+        "option4" : "Korea"
+    },
+    "__v" : 0
+}
+
+/* 7 */
+{
+    "_id" : ObjectId("588c70217575cf194e1d8b5e"),
+    "index" : 4,
+    "quest" : "The world’s largest solar park has been built by which country?",
+    "answer" : "China",
+    "options" : {
+        "option1" : "USA",
+        "option2" : "China",
+        "option3" : "Japan",
+        "option4" : "Germany"
+    },
+    "__v" : 0
+}
+
+/* 8 */
+{
+    "_id" : ObjectId("588c7092e82039195aa82de8"),
+    "index" : 5,
+    "quest" : "Ababeel” ballistic missile has been successfully launched by which country?",
+    "answer" : "Pakistan",
+    "options" : {
+        "option1" : "Pakistan",
+        "option2" : "Afganistan",
+        "option3" : "Kazakistan",
+        "option4" : "None"
+    },
+    "__v" : 0
+}
+
+
+//for users who gave their test
+/* 1 */
+{
+    "_id" : ObjectId("588c763a2684be1b5f2e9421"),
+    "name" : "kamini",
+    "data" : "January 28, 2017 4:15 PM",
+    "__v" : 0,
+    "score" : 4
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("588c91952684be1b5f2e9422"),
+    "name" : "kunal",
+    "data" : "January 28, 2017 6:11 PM",
+    "__v" : 0,
+    "score" : 4
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("588c91e52684be1b5f2e9423"),
+    "name" : "satyam",
+    "data" : "January 28, 2017 6:13 PM",
+    "__v" : 0,
+    "score" : 5
+}
+
+/* 4 */
+{
+    "_id" : ObjectId("588c98d5a8c3f323232c5c60"),
+    "name" : "Mrinal",
+    "data" : "January 28, 2017 6:42 PM",
+    "__v" : 0,
+    "score" : 5
+}
+
+/* 5 */
+{
+    "_id" : ObjectId("588c9b2ca8c3f323232c5c61"),
+    "name" : "Mohit",
+    "data" : "January 28, 2017 6:52 PM",
+    "__v" : 0,
+    "score" : 4
+}
+
+/* 6 */
+{
+    "_id" : ObjectId("588c9bd8a8c3f323232c5c62"),
+    "name" : "Rishu",
+    "data" : "January 28, 2017 6:55 PM",
+    "__v" : 0,
+    "score" : 4
+}

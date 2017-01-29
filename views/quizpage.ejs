@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Take the quiz</h1>
+    <div id="welcome-user"></div>
+    <div id="login-details">
+     <label>Name : </label><input type="text" id="username" /><br><br>
+    <button type="button" id="createuser">Submit</button>
+    </div>
+    <div id="newid"></div>
+    <button type="button" id="btn" style="display:none">Click to start the quiz</button>
+    
+  </body>
+</html>
+<script>
+var count=0;
+
+$(document).ready(function() {
+     $('#createuser').click(function () {
+      var name = $("#username").val();
+      //alert(name);
+      $.ajax({
+        //async : false,
+        type:"POST",
+        url:"/user_function",
+        data :   {username : name, count : count},
+        //dataType: 'json',  // multiple data sent using ajax
+        success: function (result) {
+          if(result.name!=undefined || result.name!=null || result.name!=""){
+            $("#welcome-user").html('<span>Welcome User </span>'+result.name);
+            $("#login-details").hide();
+            $("#btn").show();
+          }
+         
+
+        }
+        });
+     });
+
+    $('#btn').click(function () {
+    	
+     ////if($('input[name="option"]:checked')==true){
+        // var t = $('input[name="option"]:checked').val();
+       // alert(t);}
+       var checkedOption="";
+       var x = document.getElementsByName("option");
+    var i;
+    for (i = 0; i < x.length; i++) {
+        if (x[i].checked ==true) {
+            checkedOption=x[i].value;
+            //alert("you checked " + checkedOption);
+        }
+    } 
+    //alert(checkedOption);
+        count++;
+      var username = $("#username").val();
+          $("#newid").html('');
+          var data = {
+            count : count,
+            username : username,
+            checkedOption : checkedOption
+          };
+      	$.ajax({
+        //async : false,
+        type:"POST",
+        url:"/show",
+        data : data,
+        //dataType: 'json',  // multiple data sent using ajax
+        success: function (result) {
+          //for(var i=0; i<result.length ; i++)
+          //alert(result.index);
+           if(result.quest==null){ $("#btn").hide();location.assign('/list');}
+          $("#newid").html('<h3><u>'+result.quest+'</u></h3><div> <input type="radio" name="option" id="option1" value='+result.options.option1+'>'+result.options.option1+'</div><div><input type="radio" name="option" id="option2" value='+result.options.option2+'>'+result.options.option2+'</div><input type="radio" name="option" id="option3" value='+result.options.option3+'>'+result.options.option3+'</div><div><input type="radio" name="option" id="option4" value='+result.options.option4+'>'+result.options.option4+'</div>');
+
+        }
+        
+        });
+        $("#btn").html('Next');
+    });
+    //
+    //alert(t);
+});
+</script>

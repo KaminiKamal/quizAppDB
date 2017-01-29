@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1></h1>
+    <div>
+<% for(var i=0; i<result.length; i++) {
+if(i==0){
+	%><div style="background:red"> <span><%= result[i].name %></span><span><%= result[i].score %></span><span><%= result[i].data %></span></div>
+	<%
+}
+else{
+%>
+  <div> <span><%= result[i].name %></span><span><%= result[i].score %></span><span><%= result[i].data %></span></div>
+<% }} %>
+</div>
+  </body>
+</html>
