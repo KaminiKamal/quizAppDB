@@ -74,7 +74,8 @@ $(document).ready(function() {
         success: function (result) {
           //for(var i=0; i<result.length ; i++)
           //alert(result.index);
-           if(result.quest==null){ $("#btn").hide();location.assign('/list');}
+           if(result.quest==null){ $("#btn").hide();
+           window.location.replace("/list/" + username);}
           $("#newid").html('<h3><u>'+result.quest+'</u></h3><div> <input type="radio" name="option" id="option1" value='+result.options.option1+'>'+result.options.option1+'</div><div><input type="radio" name="option" id="option2" value='+result.options.option2+'>'+result.options.option2+'</div><input type="radio" name="option" id="option3" value='+result.options.option3+'>'+result.options.option3+'</div><div><input type="radio" name="option" id="option4" value='+result.options.option4+'>'+result.options.option4+'</div>');
 
         }

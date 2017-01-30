@@ -8,13 +8,17 @@
     <h1></h1>
     <div>
 <% for(var i=0; i<result.length; i++) {
+if(result[i].name==username){
+	%><div style="background:green"> <span><%= result[i].name %></span><span style="padding-left:20px"><%= result[i].score %></span><span style="padding-left:20px"><%= result[i].data %></span></div>
+	<%
+}
 if(i==0){
-	%><div style="background:red"> <span><%= result[i].name %></span><span><%= result[i].score %></span><span><%= result[i].data %></span></div>
+	%><div style="background:red"> <span><%= result[i].name %></span><span style="padding-left:20px"><%= result[i].score %></span><span style="padding-left:20px"><%= result[i].data %></span></div>
 	<%
 }
 else{
 %>
-  <div> <span><%= result[i].name %></span><span><%= result[i].score %></span><span><%= result[i].data %></span></div>
+  <div> <span><%= result[i].name %></span><span style="padding-left:20px"><%= result[i].score %></span><span style="padding-left:20px"><%= result[i].data %></span></div>
 <% }} %>
 </div>
   </body>

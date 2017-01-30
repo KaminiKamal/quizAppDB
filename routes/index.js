@@ -20,10 +20,11 @@ router.post('/show', function (req, res){
 	});
   if(num>1){
   	var k = num-1;
-  QuizAdmin.findOne({index : k}).exec(function(err,doc){
-		console.log('List of questions : -');
+    QuizAdmin.findOne({index : k}).exec(function(err,doc){
+		console.log('List of questions : ------------');
 		console.log(doc);
-		if(doc.answer==b){console.log("correct answer:-->" + b + "given answer: " + doc.answer);
+		if(doc.answer==b){
+			console.log("correct answer:-->" + b + "given answer: " + doc.answer);
           QuizResult.findOneAndUpdate({name : a}, { $inc: { score: 1 } }, function(err, data) {
 								if (err) {
 									console.log(err);
@@ -37,8 +38,8 @@ router.post('/show', function (req, res){
 									res.locals=b;
 								}
 
-							});
-	     }
+		  });
+	    }
 		if(doc.answer!=b){console.log("wrong answer:-->" + b + "|| given answer : " + doc.answer);}
 		return res.locals=b;
 	});
@@ -85,17 +86,19 @@ router.get('/list', function(req, res){
 	
 });
 */
-router.get('/list', function (req, res){
-                 QuizResult.find().sort({data: -1}).exec(function (err, val){
+router.get('/list/:fname', function (req, res){
+	        var usr = req.params.fname;
+                 QuizResult.find().sort({score:-1, data: -1}).exec(function (err, val){
            	if (err){
               //console.log("error");
               res.send("error");
             }
            	else{
                console.log(val);
+               //if
               //console.log("data sent");
            	//res.send(val);
-           	res.render('list',  {result : val});
+           	res.render('list',  {result : val, username : usr});
             }
         });
 	           // res.render('list', {title: 'Welcome dear quiz setter'});
